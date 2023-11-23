@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] float moveSpeed = 1.5f;
+    [SerializeField] float rotationSpeed = 300f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +16,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 0.5f);
-        transform.Translate(0, 0.05f, 0);
+        float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        float rotationAmount = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+
+        transform.Rotate(0, 0, -rotationAmount);
+        transform.Translate(0, moveAmount, 0);
     }
 }
