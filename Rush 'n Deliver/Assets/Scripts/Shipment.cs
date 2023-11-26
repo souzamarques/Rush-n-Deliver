@@ -22,6 +22,7 @@ public class Shipment : MonoBehaviour
         {
             Debug.Log("Shipment delivered!");
             hasPackage = false;
-        }      
+            Destroy(other.gameObject, 0.8f);
+        }
     }
 }
