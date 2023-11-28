@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shipment
   - Customer
+  - Boost
   layers:
   - Default
   - TransparentFX
